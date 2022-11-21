@@ -12,14 +12,26 @@ class FileGetterExtension extends AbstractExtension
 	public function getFunctions()
 	{
 		return [
-			new TwigFunction('get_required_css_files', [$this, 'get_required_css_files']),
-			new TwigFunction('get_required_js_files', [$this, 'get_required_js_files']),
+			new TwigFunction('getCss', [$this, 'get_required_css_files']),
+			new TwigFunction('getJs', [$this, 'get_required_js_files']),
+			new TwigFunction('addCss', [$this, 'add_required_css_files']),
+			new TwigFunction('addJs', [$this, 'add_required_js_files']),
 		];
 	}
 
-	public function get_required_css_files($group = ''): string
+	public function add_required_css_files($file, $group = '')
+	{
+		FileManager::registerCssFile($file, $group);
+	}
+
+	public function get_required_css_files($group = '')
 	{
 		return new Markup( FileManager::getRequiredCssFiles($group), 'UTF-8' );
+	}
+
+	public function add_required_js_files($file, $group = '')
+	{
+		FileManager::registerJsFile($file, $group);
 	}
 
 	public function get_required_js_files($group = '')

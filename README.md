@@ -35,6 +35,23 @@ public function buildView(FormView $view, FormInterface $form, array $options)
 }
 ```
 
+or in a twig template : 
+
+``` twig
+
+{% do addJs('fichier.js') %} 
+
+or
+
+{% do addCss('fichier.css') %}
+
+or with a group : 
+
+{% do addJs('fichier.js', 'group Name') %}
+
+```
+
+
 and in your template : 
 
 ```
