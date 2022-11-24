@@ -9,7 +9,7 @@ use Eltharin\TwigFilesGetterBundle\Service\FileManager;
 
 class FileGetterExtension extends AbstractExtension
 {
-	public function getFunctions()
+	public function getFunctions() :array
 	{
 		return [
 			new TwigFunction('getCss', [$this, 'get_required_css_files']),
