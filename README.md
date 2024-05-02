@@ -39,7 +39,7 @@ or in a twig template :
 
 ``` twig
 
-{% do addJs('fichier.js') %} 
+{% do addJs('/bundles/eltharinreloadablefield/js/reloader.js') %} 
 
 or
 
@@ -61,7 +61,7 @@ and in your template :
 will write
 
 ```
-<script src="/bundles/eltharincommonassets/js/scripts.js"/></script>
+<script src="/bundles/eltharinreloadablefield/js/scripts.js"/></script>
 ```
 
 
